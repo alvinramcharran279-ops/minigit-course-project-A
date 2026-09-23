@@ -25,7 +25,18 @@
 | UR-GIT-07 | A student developer shall be able to view recorded checkpoints from newest to oldest, including their identifier and explanation. | UN-GIT-06 |
 | UR-GIT-08 | A student developer shall receive a useful error when a command is invalid, a requested file is unavailable, or a path is outside the allowed project files. | UN-GIT-07 |
 | UR-GIT-09 | A student developer shall be able to retry an operation after a failure without losing ordinary project files or an already recorded checkpoint. | UN-GIT-07 |
-UR-GIT-09
-A student developer shall be able to retry an operation after a failure without losing ordinary project files or an already recorded checkpoint.
-UN-GIT-07
+
+## UR-to-UN Mapping
+
+| UR ID | Source UN ID(s) |
+|---|---|
+| UR-GIT-01 | UN-GIT-01, UN-GIT-07 |
+| UR-GIT-02 | UN-GIT-02 |
+| UR-GIT-03 | UN-GIT-03 |
+| UR-GIT-04 | UN-GIT-03 |
+| UR-GIT-05 | UN-GIT-04 |
+| UR-GIT-06 | UN-GIT-05, UN-GIT-04 |
+| UR-GIT-07 | UN-GIT-06 |
+| UR-GIT-08 | UN-GIT-07 |
+| UR-GIT-09 | UN-GIT-07 |
 
