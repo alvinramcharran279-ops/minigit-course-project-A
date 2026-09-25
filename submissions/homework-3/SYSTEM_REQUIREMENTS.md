@@ -40,3 +40,19 @@
 | UR-GIT-08 | UN-GIT-07 |
 | UR-GIT-09 | UN-GIT-07 |
 
+## Functional System Requirements
+
+SR-01 (source UR-GIT-01): Given an empty folder, when init is used, MiniGit shall create a new repository with all necessary tracking structures in that folder, with nothing yet tracked.
+Check: inspect the folder for the new tracking structure and confirm status reports nothing tracked.
+
+SR-02 (source UR-GIT-01): Given an already-initialized project with a staged notes.txt and one recorded checkpoint, when init is used again, MiniGit shall leave the existing stage and recorded checkpoint unchanged and shall not remove any existing project files.
+Check: inspect the stage and checkpoint log before and after the second init to confirm both are unchanged.
+
+SR-03 (source UR-GIT-05): Given an initialized project with notes.txt containing ONE and plan.txt present, when add notes.txt is used, MiniGit shall stage a copy of notes.txt containing ONE without staging plan.txt.
+Check: inspect the stage for notes.txt (ONE) and confirm plan.txt is absent from the stage.
+
+SR-04 (source UR-GIT-08, UR-GIT-09): Given a staged notes.txt containing ONE and missing.txt does not exist in the project, when add missing.txt is used, MiniGit shall report an error identifying missing.txt as not found and shall leave the staged notes.txt content ONE unchanged.
+Check: inspect the error output and confirm the staged notes.txt content is still ONE.
+
+SR-05 (source UR-GIT-02): Given an initialized project where notes.txt has been staged with content ONE, when status is used, MiniGit shall report notes.txt as staged and shall not report it as untracked or modified.
+Check: inspect the status output for notes.txt listed under staged, not under untracked or modified.
