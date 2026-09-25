@@ -46,8 +46,11 @@ int main() {
                           fileState.staged == "TWO" &&
                           fileState.committed == "(missing)",
                       "second add copies TWO to stage");
-    fileState.working = "THREE";
-    // TODO: Add one check here: staged is still TWO, committed is still missing.
+      fileState.working = "THREE";
+    failures += check(fileState.working == "THREE" &&
+                          fileState.staged == "TWO" &&
+                          fileState.committed == "(missing)",
+                      "editing working again leaves staged TWO");
     std::cout << failures << " failed check(s)\n";
     return failures == 0 ? 0 : 1;
 }
