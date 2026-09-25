@@ -13,9 +13,9 @@ struct FileState {
 // Pre-condition: all three labels have values.
 // Post-condition: staged copies working; working and committed are unchanged.
 void stageWorkingCopy(FileState& fileState) {
-    // TODO: Write one assignment statement here.
-    (void)fileState; // Remove this line after using fileState.
+    fileState.staged = fileState.working;
 }
+
 
 // Input: one condition and its name.
 // Outcome: print PASS or FAIL and return 0 for pass, 1 for fail.
