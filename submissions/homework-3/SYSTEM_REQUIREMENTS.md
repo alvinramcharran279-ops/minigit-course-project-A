@@ -69,7 +69,7 @@ Check: inspect the checkpoint log for the new numbered commit ID paired with the
 SR-09 (source UR-GIT-06): Given a notes.txt already staged as ONE and the working copy of notes.txt then edited to TWO without using add again, when commit -m "checkpoint one" is used, MiniGit shall record a new checkpoint containing notes.txt = ONE and shall leave the working copy at TWO.
 Check: inspect the new checkpoint's notes.txt content (ONE) and confirm the working file still reads TWO.
 
-SR-10 (source UR-GIT-08, UR-GIT-09): Given a staged notes.txt = ONE and no prior checkpoints, when commit -m "message" is used, MiniGit shall report an error stating the commit message must be nonempty and shall not create a new checkpoint.
+SR-10 (source UR-GIT-08, UR-GIT-09): Given a staged notes.txt = ONE and no prior checkpoints, when commit -m "" is used, MiniGit shall report an error stating the commit message must be nonempty and shall not create a new checkpoint.
 Check: inspect the error output and confirm the checkpoint log still shows no recorded checkpoints.
 
 SR-11 (source UR-GIT-07): Given a project with two recorded checkpoints, the first with message "add notes" and the second with message "update notes", when log is used, MiniGit shall list the checkpoints from newest to oldest, showing each checkpoint's numbered identifier and its message.
