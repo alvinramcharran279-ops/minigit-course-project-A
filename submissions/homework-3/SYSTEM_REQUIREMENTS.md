@@ -56,3 +56,24 @@ Check: inspect the error output and confirm the staged notes.txt content is stil
 
 SR-05 (source UR-GIT-02): Given an initialized project where notes.txt has been staged with content ONE, when status is used, MiniGit shall report notes.txt as staged and shall not report it as untracked or modified.
 Check: inspect the status output for notes.txt listed under staged, not under untracked or modified.
+
+SR-06 (source UR-GIT-03): Given an initialized project with notes.txt staged as ONE and the working copy of notes.txt edited to TWO, when diff is used, MiniGit shall show a whole-file BEFORE/AFTER comparison between the staged content ONE and the current working content TWO.
+Check: inspect the diff output and confirm ONE is shown as the before content and TWO as the after content.
+
+SR-07 (source UR-GIT-04): Given a project with one recorded checkpoint containing notes.txt = ONE and a newer staged copy of notes.txt = TWO, when diff --staged is used, MiniGit shall show a whole-file BEFORE/AFTER comparison between the checkpoint content ONE and the staged content TWO.
+Check: inspect the diff --staged output and confirm ONE is shown as the checkpoint version and TWO as the staged version.
+
+SR-08 (source UR-GIT-06): Given a staged notes.txt containing ONE and no prior checkpoints, when commit -m "first checkpoint" is used, MiniGit shall record a new checkpoint containing notes.txt = ONE, assign it a numbered commit ID, and store the message "first checkpoint".
+Check: inspect the checkpoint log for the new numbered commit ID paired with the message "first checkpoint".
+
+SR-09 (source UR-GIT-06): Given a notes.txt already staged as ONE and the working copy of notes.txt then edited to TWO without using add again, when commit -m "checkpoint one" is used, MiniGit shall record a new checkpoint containing notes.txt = ONE and shall leave the working copy at TWO.
+Check: inspect the new checkpoint's notes.txt content (ONE) and confirm the working file still reads TWO.
+
+SR-10 (source UR-GIT-08, UR-GIT-09): Given a staged notes.txt = ONE and no prior checkpoints, when commit -m "message" is used, MiniGit shall report an error stating the commit message must be nonempty and shall not create a new checkpoint.
+Check: inspect the error output and confirm the checkpoint log still shows no recorded checkpoints.
+
+SR-11 (source UR-GIT-07): Given a project with two recorded checkpoints, the first with message "add notes" and the second with message "update notes", when log is used, MiniGit shall list the checkpoints from newest to oldest, showing each checkpoint's numbered identifier and its message.
+Check: inspect the log output and confirm the "update notes" entry appears before the "add notes" entry, each with its own identifier and message.
+
+SR-12 (source UR-GIT-08, UR-GIT-09): Given an initialized project, when add ../outside.txt is used, MiniGit shall report an error identifying the path as outside the allowed project files and shall leave the stage unchanged.
+Check: inspect the error output and confirm the stage content is unchanged from before the command.
